@@ -1,0 +1,24 @@
+*** Reactjs : programme ***
+
+Utilisation de react direct (chargement dans une page html)
+Fondamentaux: 
+    ReactDOM.render, React.createElement
+    Variables et binding {}
+    Props, state et (re)-rendu
+    Evenements
+Installation d'un serveur de développement: create-react-app
+Présentation de la structure d'une app react
+Composant fonctionnels et composant classe
+Découpage, hiérarchie des composants
+Liste (array.map) et clés
+Rendu condionnel
+
+Cycles de vie
+Ajax
+Formulaire
+Ref
+Contexte (global state)
+Routage
+
+
+

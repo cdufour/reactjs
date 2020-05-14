@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { render } from 'react-dom';
 import Players from './Players';
+import PasswordReset from './PasswordReset';
+import PlayerManager from './PlayerManager';
 
 
 function Test(props) {
@@ -26,13 +28,16 @@ function MyApp() {
 
     return (
         <div>
-            {/* <button onClick={() => title = "coucou"}>Click</button> */}
+            {/* <button onClick={() => title = "coucou"}>Click</button> 
             <button onClick={() => setTitle("Coucou")}>Click</button>
             <div>{title}</div>
             {list}
             <Test title="Titre" content="Contenu de mon composant" />
-            {/* <Player name="Chris" /> */}
+            <Player name="Chris" />
             <Players />
+            <PasswordReset />
+            <PlayerForm /> */}
+            <PlayerManager />
         </div>
     )
 }

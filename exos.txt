@@ -1,0 +1,13 @@
+*** Reactjs : exercices ***
+
+1/ JS pur
+Créer une page html contenant :
+- un bouton
+- champ texte
+- un div (vide)
+Au clic sur le bouton, le contenu du champ texte doit être affiché dans le div
+
+
+2/ Mot de passe oublié
+A partir des captures d'écran fournies (site Leroy Merlin), créer un composant validant la réinitisalition
+d'un mot de passe en fonction de contraintes (longueur, minuscule, etc.)
