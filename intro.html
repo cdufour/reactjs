@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+</head>
+<body>
+    <h1>Intro</h1>
+    <div id="app"></div>
+    <div id="example"></div>
+    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>    
+    
+    
+    <!-- <script src="switch.component.js"></script> -->
+    <script src="counter.component.js"></script>
+    
+    <script>
+
+        // var ce = React.createElement;
+        // var strong = ce('strong', null, 'Formation Reactjs');
+
+        // ReactDOM.render(
+        //     React.createElement('h2', null, 'Formation Reactjs'),
+        //     document.getElementById('app')
+        // );
+
+        // ReactDOM.render(
+        //     ce('span', null, strong),
+        //     document.getElementById('example')
+        // );
+
+        // ReactDOM.render(
+        //     ce('span', null, strong),
+        //     document.getE('example')
+        // );
+
+        ReactDOM.render(e(CounterComponent, {message: "coucou"}), document.getElementById('app'));
+
+    </script>
+
+</body>
+</html>
