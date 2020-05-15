@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTeams } from '../../services/Player.service';
+import { getTeams } from '../../services/Team.service';
 import LangContext from '../../contexts/LangContext'
 
 
@@ -23,14 +23,15 @@ class PlayerForm extends React.Component
                 this.setState({teams: res})
             })
 
-        console.log(this.numInput);
+        //console.log(this.numInput); // accès prématuré createREf() est asynchrone
         console.log(this.myDiv);
     }
 
     onSave(playerData) {
+        console.log(this.numInput);
         //console.log('onSave PlayerForm Component');
         this.props.onSave(playerData);
-        this.numInput.current.value = "popo";
+        this.numInput.current.value = "TOTO";
         this.myDiv.current.style.fontSize = "5rem";
     }
 
@@ -40,6 +41,10 @@ class PlayerForm extends React.Component
         } else if (e.target.name == "teamName") {
             this.setState({team: e.target.value})
         }
+    }
+
+    moveDiv() {
+        this.myDiv.current.style.fontSize = "5rem";
     }
 
     render() {
@@ -53,6 +58,7 @@ class PlayerForm extends React.Component
             <>
                 <h2>Form Component</h2>
                 <div ref={this.myDiv}>myDiv</div>
+                <button onClick={() => this.moveDiv()}>Move Div</button>
                 <input type="text" ref={this.numInput} />
 
                 <input

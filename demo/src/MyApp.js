@@ -5,6 +5,13 @@ import PasswordReset from './components/PasswordReset';
 import PlayerManager from './components/player/PlayerManager';
 import { LangProvider } from './contexts/LangContext';
 import LangSwitcher from './components/LangSwitcher';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import TeamForm from './components/TeamForm';
 
 function Test(props) {
     return (
@@ -40,7 +47,10 @@ function MyApp() {
     const [title, setTitle] = useState("Titre principal");
 
     return (
+
+
         <LangProvider value="fr">
+
             <div>
                 {/* <button onClick={() => title = "coucou"}>Click</button> 
                 <button onClick={() => setTitle("Coucou")}>Click</button>
@@ -54,11 +64,58 @@ function MyApp() {
                 {/* <Test title="Titre" content="Contenu de mon composant">
                     <SubTest />
                 </Test> */}
-                <LangSwitcher />
-                <PlayerManager />
-            </div>
-        </LangProvider>
+                {/* <LangSwitcher />
+                <PlayerManager /> */}
 
+                <Router>
+                    <LangSwitcher />
+                    <div>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <Link to="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/test">Test</Link>
+                                </li>
+                                <li>
+                                    <Link to="/subtest">Subtest</Link>
+                                </li>
+                                <li>
+                                    <Link to="/team/form">Add a team</Link>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <Switch>
+                        <Route path="/team/form">
+                            <TeamForm />
+                        </Route>
+                        <Route path="/passwordreset">
+                            <PasswordReset />
+                        </Route>
+                        <Route path="/player/:id">
+                            <SubTest />
+                        </Route>
+                        <Route path="/subtest">
+                            <SubTest />
+                        </Route>
+                        <Route path="/test">
+                            <Test title="Titre" content="Contenu de mon composant">
+                                <SubTest />
+                            </Test>
+                        </Route>
+                        <Route path="/">
+                            <PlayerManager />
+                        </Route>
+                    </Switch>
+                </Router>
+
+            </div>
+
+        </LangProvider>
+        
     )
 }
 
