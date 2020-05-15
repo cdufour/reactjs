@@ -1,17 +1,37 @@
 import React from 'react';
+import { getTeams } from '../../services/Player.service';
+import LangContext from '../../contexts/LangContext'
+
 
 class PlayerForm extends React.Component
 {
+    static contextType = LangContext
 
     constructor(props) {
         super(props);
-        this.state = { name: '', team: '0' }
+        this.state = { name: '', team: '0', teams: null }
         this.onHandleChange = this.onHandleChange.bind(this); //  this rebinding
+        
+        this.numInput = React.createRef();
+        this.myDiv = React.createRef();
+    }
+
+    componentDidMount() {
+        getTeams()
+            .then(res => res.json())
+            .then(res => {
+                this.setState({teams: res})
+            })
+
+        console.log(this.numInput);
+        console.log(this.myDiv);
     }
 
     onSave(playerData) {
         //console.log('onSave PlayerForm Component');
-        this.props.onSave(playerData)
+        this.props.onSave(playerData);
+        this.numInput.current.value = "popo";
+        this.myDiv.current.style.fontSize = "5rem";
     }
 
     onHandleChange(e) {
@@ -23,9 +43,18 @@ class PlayerForm extends React.Component
     }
 
     render() {
+
+        
+        if (!this.state.teams) return (<div>Loading...</div>);
+
+        let teams = this.state.teams.map(team => <option key={team}>{team}</option>);
+
         return (
             <>
                 <h2>Form Component</h2>
+                <div ref={this.myDiv}>myDiv</div>
+                <input type="text" ref={this.numInput} />
+
                 <input
                     onChange={this.onHandleChange}
                     type="text"
@@ -34,9 +63,7 @@ class PlayerForm extends React.Component
                     value={this.state.name} />
                 <select name="teamName" value={this.state.team} onChange={this.onHandleChange}>
                     <option value="0">Choisir une équipe</option>
-                    <option>Juve</option>
-                    <option>Madrid</option>
-                    <option>Strasbourg</option>
+                    {teams}
                 </select>
                 <button onClick={() => this.onSave(this.state)}>Enregistrer</button>
             </>

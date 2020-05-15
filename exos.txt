@@ -11,3 +11,14 @@ Au clic sur le bouton, le contenu du champ texte doit être affiché dans le div
 2/ Mot de passe oublié
 A partir des captures d'écran fournies (site Leroy Merlin), créer un composant validant la réinitisalition
 d'un mot de passe en fonction de contraintes (longueur, minuscule, etc.)
+
+
+3/ Ajouter une fonctionnalité de suppression de joueur au niveau du composant PlayerList
+
+
+4/ Créer un composant permettrant de filter la liste des joueurs par recherche
+full text dans le champs name
+
+
+5/ Créer un composant LangSwitcher permettant de passer du français à l'anglais.
+Ce composant devra s'appuper sur un state global (contexte)

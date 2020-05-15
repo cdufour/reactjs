@@ -1,8 +1,0 @@
-*** Reactjs : exercices ***
-
-1/ JS pur
-Créer une page html contenant :
-- un bouton
-- champ texte
-- un div (vide)
-Au clic sur le bouton, le contenu du champ texte doit être affiché dans le div

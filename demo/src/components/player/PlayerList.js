@@ -1,8 +1,11 @@
 import React from 'react';
 import PlayerItem from './PlayerItem';
+import LangContext from '../../contexts/LangContext'
 
 class PlayerList extends React.Component
 {
+    static contextType = LangContext
+    
     constructor(props) {
         super(props);
     }
