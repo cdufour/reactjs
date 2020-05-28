@@ -40,7 +40,7 @@ app.get('/teams', (req, res) => {
 app.post('/teams', (req, res) => {
     const {name} = req.body.team;
     teams.push(name);
-    res.send({message: "ok"});
+    res.json({message: "ok"});
 })
 
 app.listen(3500, () => {
